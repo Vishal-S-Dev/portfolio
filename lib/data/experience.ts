@@ -1,0 +1,185 @@
+import type { Experience } from "@/types";
+
+export const experiences: Experience[] = [
+  {
+    id: "4fox-solutions",
+    company: "4Fox Solutions Pvt. Ltd.",
+    role: "Senior Software Engineer",
+    location: "Nashik, India",
+    startDate: "2020-11",
+    endDate: null,
+    duration: "Nov 2020 – Present",
+    current: true,
+    summary:
+      "Lead mobile engineer driving architecture modernization, performance optimization, and secure fintech integrations across enterprise Android products serving banking and mobility clients.",
+    responsibilities: [
+      "Architect and deliver production Android applications using Clean Architecture, MVVM, and modular Gradle structures",
+      "Lead Kotlin migration initiatives and establish coding standards across mobile engineering teams",
+      "Design offline-first data layers with Room, Coroutines, and Flow for resilient user experiences",
+      "Implement bank-grade security with RSA/AES encryption for ICICI Bank payment workflows",
+      "Mentor junior engineers through code reviews, pair programming, and technical design sessions",
+      "Collaborate with product, QA, and backend teams to ship features on predictable release cadences",
+    ],
+    achievements: [
+      "Spearheaded full Kotlin migration, reducing production crash rates by 30% within two release cycles",
+      "Restructured codebase to Clean Architecture and MVVM, cutting average build times by 40%",
+      "Replaced legacy threading with Coroutines and Flow, delivering a 25% reduction in ANR incidents",
+      "Shipped offline-first Room persistence enabling uninterrupted workflows in low-connectivity environments",
+      "Integrated RSA/AES encryption for ICICI Bank fintech flows, meeting strict compliance requirements",
+      "Mentored 3 junior developers who progressed to independent feature ownership within six months",
+    ],
+    metrics: [
+      { label: "Crash Reduction", value: "30%", description: "Post-Kotlin migration" },
+      { label: "Build Time", value: "40%", description: "Faster with modular architecture" },
+      { label: "ANR Reduction", value: "25%", description: "Coroutines & Flow adoption" },
+      { label: "Engineers Mentored", value: "3", description: "Promoted to feature leads" },
+    ],
+    technologies: [
+      "Kotlin",
+      "Java",
+      "Android Jetpack",
+      "Room",
+      "Coroutines",
+      "Flow",
+      "MVVM",
+      "Clean Architecture",
+      "Retrofit",
+      "RSA/AES",
+      "Firebase",
+      "Gradle",
+    ],
+  },
+  {
+    id: "bidkart",
+    company: "BidKart",
+    role: "Senior Software Engineer",
+    location: "Mumbai, India",
+    startDate: "2020-01",
+    endDate: "2020-10",
+    duration: "Jan 2020 – Oct 2020",
+    summary:
+      "Built and scaled a real-time auction platform on Android, engineering low-latency bid delivery and rock-solid stability across 15+ production releases.",
+    responsibilities: [
+      "Developed real-time bidding features using XMPP for sub-second bid propagation",
+      "Implemented MVVM architecture with LiveData and ViewModel for predictable UI state",
+      "Owned release pipeline from feature development through Play Store deployment",
+      "Integrated payment gateways and user wallet flows for seamless checkout experiences",
+      "Partnered with backend engineers to define XMPP message schemas and reconnection strategies",
+      "Monitored crash analytics and prioritized stability fixes to maintain high crash-free rates",
+    ],
+    achievements: [
+      "Delivered real-time XMPP bidding engine handling concurrent auction traffic with minimal latency",
+      "Shipped 15+ production releases maintaining 98% crash-free session rate",
+      "Established MVVM patterns adopted as team standard for all new feature modules",
+      "Reduced bid confirmation latency by optimizing XMPP connection pooling and message batching",
+      "Implemented graceful degradation for network interruptions during live auction events",
+    ],
+    metrics: [
+      { label: "Production Releases", value: "15+", description: "Shipped to Play Store" },
+      { label: "Crash-free Sessions", value: "98%", description: "Sustained stability metric" },
+      { label: "Real-time Protocol", value: "XMPP", description: "Sub-second bid delivery" },
+    ],
+    technologies: [
+      "Kotlin",
+      "Java",
+      "Android",
+      "XMPP",
+      "MVVM",
+      "LiveData",
+      "Retrofit",
+      "Firebase Crashlytics",
+      "Google Play Console",
+    ],
+  },
+  {
+    id: "predcred",
+    company: "PredCred",
+    role: "Senior Software Engineer",
+    location: "Mumbai, India",
+    startDate: "2017-03",
+    endDate: "2020-01",
+    duration: "Mar 2017 – Jan 2020",
+    summary:
+      "Core engineer on a sports prediction platform that scaled to 500K+ downloads, driving engagement growth through data-driven features and robust Firebase infrastructure.",
+    responsibilities: [
+      "Built and maintained Android client for sports prediction and fantasy scoring workflows",
+      "Integrated Firebase Analytics, Cloud Messaging, and Remote Config for growth experimentation",
+      "Developed REST API integrations with Node.js backend services for live match data",
+      "Designed push notification strategies to re-engage users during live sporting events",
+      "Optimized app startup time and memory footprint for mid-range Android devices",
+      "Contributed to backend Node.js services for prediction algorithms and leaderboard logic",
+    ],
+    achievements: [
+      "Scaled mobile app to 500K+ downloads across cricket and football prediction markets",
+      "Boosted daily active users by 35% through targeted push campaigns and gamified streaks",
+      "Implemented Firebase Remote Config enabling A/B tests without app store releases",
+      "Built real-time score update pipeline reducing data staleness from minutes to seconds",
+      "Contributed Node.js microservices handling 10K+ concurrent prediction submissions during peak matches",
+    ],
+    metrics: [
+      { label: "Total Downloads", value: "500K+", description: "Google Play Store" },
+      { label: "DAU Growth", value: "35%", description: "Engagement optimization" },
+      { label: "Peak Concurrency", value: "10K+", description: "Live match submissions" },
+    ],
+    technologies: [
+      "Java",
+      "Kotlin",
+      "Android",
+      "Firebase",
+      "Node.js",
+      "JavaScript",
+      "REST APIs",
+      "FCM",
+      "SQLite",
+    ],
+  },
+  {
+    id: "emsys",
+    company: "EMSYS",
+    role: "Software Engineer",
+    location: "India",
+    startDate: "2013-07",
+    endDate: "2017-02",
+    duration: "Jul 2013 – Feb 2017",
+    summary:
+      "Established foundational Android and Java engineering expertise building enterprise mobile applications, REST API integrations, and end-to-end feature delivery for diverse client portfolios.",
+    responsibilities: [
+      "Developed enterprise Android applications for logistics, field service, and internal business tools",
+      "Integrated RESTful web services with robust error handling and offline caching strategies",
+      "Collaborated directly with clients to gather requirements and translate them into technical specifications",
+      "Maintained Java backend services and database schemas supporting mobile client workflows",
+      "Conducted unit and integration testing to ensure reliable releases across device configurations",
+      "Participated in agile ceremonies including sprint planning, demos, and retrospective improvements",
+    ],
+    achievements: [
+      "Delivered 8+ enterprise Android apps from concept through production deployment",
+      "Built reusable networking and persistence libraries adopted across three client projects",
+      "Reduced API integration defects by 50% through standardized Retrofit service layer patterns",
+      "Owned full feature lifecycle for inventory management module used by 200+ field agents daily",
+      "Earned early promotion from junior to software engineer based on consistent delivery quality",
+    ],
+    metrics: [
+      { label: "Enterprise Apps", value: "8+", description: "Delivered end-to-end" },
+      { label: "API Defect Reduction", value: "50%", description: "Standardized integration layer" },
+      { label: "Daily Active Users", value: "200+", description: "Field agent inventory module" },
+    ],
+    technologies: [
+      "Java",
+      "Android SDK",
+      "REST APIs",
+      "SQLite",
+      "JSON",
+      "XML",
+      "Git",
+      "Agile/Scrum",
+    ],
+  },
+];
+
+export function getExperienceById(id: string): Experience | undefined {
+  return experiences.find((exp) => exp.id === id);
+}
+
+export function getCurrentExperience(): Experience | undefined {
+  return experiences.find((exp) => exp.current);
+}
