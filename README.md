@@ -2,8 +2,8 @@
 
 Premium personal portfolio for a Senior Mobile Engineer specializing in **Android**, **Kotlin**, and **React Native**.
 
-**Live:** https://shegaonkarv.github.io/portfolio  
-**Repository:** https://github.com/shegaonkarv/portfolio
+**Live:** https://vishal-s-dev.github.io/portfolio  
+**Repository:** https://github.com/Vishal-S-Dev/portfolio
 
 ---
 
@@ -61,7 +61,7 @@ public/              # Favicon, OG, resume PDF, icons
 ## Installation
 
 ```bash
-git clone https://github.com/shegaonkarv/portfolio.git
+git clone https://github.com/Vishal-S-Dev/portfolio.git
 cd portfolio
 npm install
 ```
@@ -85,7 +85,7 @@ npx serve out      # optional local preview
 For a GitHub Pages–accurate local build:
 
 ```bash
-GITHUB_PAGES=true GITHUB_REPOSITORY=shegaonkarv/portfolio npm run build
+GITHUB_PAGES=true GITHUB_REPOSITORY=Vishal-S-Dev/portfolio npm run build
 ```
 
 ## Deployment (GitHub Pages)

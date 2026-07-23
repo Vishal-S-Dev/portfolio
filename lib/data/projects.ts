@@ -22,7 +22,7 @@ export const projects: Project[] = [
     bannerGradient: "from-emerald-500 via-teal-500 to-cyan-600",
     links: {
       demo: "#",
-      github: "https://github.com/shegaonkarv",
+      github: "https://github.com/Vishal-S-Dev",
     },
     challenges: [
       "Designing conversational AI flows that feel natural while maintaining medical disclaimer boundaries",
@@ -80,7 +80,7 @@ export const projects: Project[] = [
     bannerGradient: "from-orange-500 via-red-500 to-rose-600",
     links: {
       playStore: "#",
-      github: "https://github.com/shegaonkarv",
+      github: "https://github.com/Vishal-S-Dev",
     },
     challenges: [
       "Maintaining XMPP connection stability during network handoffs and background app states",

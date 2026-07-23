@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://shegaonkarv.github.io/portfolio/sitemap.xml
+Sitemap: https://vishal-s-dev.github.io/portfolio/sitemap.xml
