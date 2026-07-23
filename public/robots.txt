@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shegaonkarv.github.io/portfolio/sitemap.xml

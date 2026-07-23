@@ -1,26 +1,157 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f6f7f9;
+  --foreground: #0b1220;
+  --card: #ffffff;
+  --card-foreground: #0b1220;
+  --muted: #eef1f5;
+  --muted-foreground: #5b6577;
+  --border: #e2e7ef;
+  --accent: #0f766e;
+  --accent-foreground: #f0fdfa;
+  --ring: #14b8a6;
+  --glow: rgba(15, 118, 110, 0.18);
+  --gradient-a: #ecfeff;
+  --gradient-b: #f8fafc;
+  --gradient-c: #f0fdf4;
+}
+
+.dark {
+  --background: #070a0f;
+  --foreground: #e8edf5;
+  --card: #0f141c;
+  --card-foreground: #e8edf5;
+  --muted: #151b26;
+  --muted-foreground: #9aa6b8;
+  --border: #1f2937;
+  --accent: #2dd4bf;
+  --accent-foreground: #042f2e;
+  --ring: #5eead4;
+  --glow: rgba(45, 212, 191, 0.16);
+  --gradient-a: #0b1220;
+  --gradient-b: #070a0f;
+  --gradient-c: #0c1a17;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-ring: var(--ring);
+  --font-sans: var(--font-dm-sans);
+  --font-display: var(--font-syne);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-dm-sans), system-ui, sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: color-mix(in oklab, var(--accent) 35%, transparent);
+  color: var(--foreground);
+}
+
+.font-display {
+  font-family: var(--font-syne), var(--font-dm-sans), system-ui, sans-serif;
+}
+
+.glass {
+  background: color-mix(in oklab, var(--card) 72%, transparent);
+  backdrop-filter: blur(16px) saturate(140%);
+  border: 1px solid color-mix(in oklab, var(--border) 80%, transparent);
+}
+
+.surface-gradient {
+  background:
+    radial-gradient(1200px 600px at 10% -10%, var(--gradient-a), transparent 55%),
+    radial-gradient(900px 500px at 90% 0%, var(--gradient-c), transparent 50%),
+    radial-gradient(700px 400px at 50% 100%, var(--glow), transparent 60%),
+    var(--background);
+}
+
+.grid-overlay {
+  background-image:
+    linear-gradient(to right, color-mix(in oklab, var(--border) 55%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklab, var(--border) 55%, transparent) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse at center, black 20%, transparent 75%);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.focus-ring {
+  outline: none;
+}
+
+.focus-ring:focus-visible {
+  box-shadow: 0 0 0 2px var(--background), 0 0 0 4px var(--ring);
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    color-mix(in oklab, var(--muted) 80%, transparent),
+    color-mix(in oklab, var(--border) 60%, transparent),
+    color-mix(in oklab, var(--muted) 80%, transparent)
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.6s linear infinite;
 }
