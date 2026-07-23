@@ -5,7 +5,7 @@ export const siteConfig: SiteConfig = {
   title: "Senior Mobile Engineer",
   tagline: "Android • Kotlin • React Native",
   description:
-    "Senior Mobile Engineer with 10+ years building high-performance Android and React Native applications across fintech, mobility, health, and real-time systems.",
+    "10+ years shipping high-performance Android and React Native products across fintech, mobility, health, and real-time systems — with architecture that scales and metrics that matter.",
   url: "https://vishal-s-dev.github.io/portfolio",
   ogImage: "/og-image.svg",
   resumePath: "/resume/Vishal_Shegaonkar_Resume.pdf",

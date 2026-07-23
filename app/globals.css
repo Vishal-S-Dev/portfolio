@@ -3,37 +3,37 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #f6f7f9;
-  --foreground: #0b1220;
+  --background: #f4f6f8;
+  --foreground: #0a0f18;
   --card: #ffffff;
-  --card-foreground: #0b1220;
-  --muted: #eef1f5;
-  --muted-foreground: #5b6577;
-  --border: #e2e7ef;
-  --accent: #0f766e;
-  --accent-foreground: #f0fdfa;
+  --card-foreground: #0a0f18;
+  --muted: #e9eef3;
+  --muted-foreground: #5a6578;
+  --border: #dce3ec;
+  --accent: #0d7370;
+  --accent-foreground: #f3fffe;
   --ring: #14b8a6;
-  --glow: rgba(15, 118, 110, 0.18);
-  --gradient-a: #ecfeff;
-  --gradient-b: #f8fafc;
-  --gradient-c: #f0fdf4;
+  --glow: rgba(13, 115, 112, 0.16);
+  --gradient-a: #e8fbff;
+  --gradient-b: #f4f6f8;
+  --gradient-c: #eafaf3;
 }
 
 .dark {
-  --background: #070a0f;
-  --foreground: #e8edf5;
-  --card: #0f141c;
-  --card-foreground: #e8edf5;
-  --muted: #151b26;
-  --muted-foreground: #9aa6b8;
-  --border: #1f2937;
+  --background: #06080d;
+  --foreground: #e9eef7;
+  --card: #0d121a;
+  --card-foreground: #e9eef7;
+  --muted: #141a24;
+  --muted-foreground: #95a1b4;
+  --border: #1c2533;
   --accent: #2dd4bf;
   --accent-foreground: #042f2e;
   --ring: #5eead4;
-  --glow: rgba(45, 212, 191, 0.16);
-  --gradient-a: #0b1220;
-  --gradient-b: #070a0f;
-  --gradient-c: #0c1a17;
+  --glow: rgba(45, 212, 191, 0.14);
+  --gradient-a: #0a1218;
+  --gradient-b: #06080d;
+  --gradient-c: #0a1614;
 }
 
 @theme inline {
@@ -47,7 +47,7 @@
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-ring: var(--ring);
-  --font-sans: var(--font-dm-sans);
+  --font-sans: var(--font-outfit);
   --font-display: var(--font-syne);
 }
 
@@ -62,39 +62,41 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-dm-sans), system-ui, sans-serif;
+  font-family: var(--font-outfit), var(--font-dm-sans), system-ui, sans-serif;
   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
-  background: color-mix(in oklab, var(--accent) 35%, transparent);
+  background: color-mix(in oklab, var(--accent) 32%, transparent);
   color: var(--foreground);
 }
 
 .font-display {
-  font-family: var(--font-syne), var(--font-dm-sans), system-ui, sans-serif;
+  font-family: var(--font-syne), var(--font-outfit), system-ui, sans-serif;
+  letter-spacing: -0.02em;
 }
 
 .glass {
-  background: color-mix(in oklab, var(--card) 72%, transparent);
-  backdrop-filter: blur(16px) saturate(140%);
-  border: 1px solid color-mix(in oklab, var(--border) 80%, transparent);
+  background: color-mix(in oklab, var(--card) 78%, transparent);
+  backdrop-filter: blur(18px) saturate(150%);
+  border: 1px solid color-mix(in oklab, var(--border) 85%, transparent);
 }
 
 .surface-gradient {
   background:
-    radial-gradient(1200px 600px at 10% -10%, var(--gradient-a), transparent 55%),
-    radial-gradient(900px 500px at 90% 0%, var(--gradient-c), transparent 50%),
-    radial-gradient(700px 400px at 50% 100%, var(--glow), transparent 60%),
+    radial-gradient(1100px 520px at 8% -8%, var(--gradient-a), transparent 58%),
+    radial-gradient(900px 480px at 92% 4%, var(--gradient-c), transparent 52%),
+    radial-gradient(700px 380px at 48% 100%, var(--glow), transparent 62%),
     var(--background);
 }
 
 .grid-overlay {
   background-image:
-    linear-gradient(to right, color-mix(in oklab, var(--border) 55%, transparent) 1px, transparent 1px),
-    linear-gradient(to bottom, color-mix(in oklab, var(--border) 55%, transparent) 1px, transparent 1px);
-  background-size: 64px 64px;
-  mask-image: radial-gradient(ellipse at center, black 20%, transparent 75%);
+    linear-gradient(to right, color-mix(in oklab, var(--border) 45%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklab, var(--border) 45%, transparent) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(ellipse at 40% 30%, black 15%, transparent 72%);
 }
 
 .text-balance {
@@ -115,12 +117,12 @@ body {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-12px);
   }
 }
 
 .animate-float {
-  animation: float 5s ease-in-out infinite;
+  animation: float 5.5s ease-in-out infinite;
 }
 
 @keyframes marquee {
@@ -154,4 +156,16 @@ body {
   );
   background-size: 200% 100%;
   animation: shimmer 1.6s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-float,
+  .animate-marquee,
+  .skeleton {
+    animation: none !important;
+  }
 }

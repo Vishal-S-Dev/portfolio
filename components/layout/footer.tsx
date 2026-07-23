@@ -35,42 +35,53 @@ export function Footer({ className }: FooterProps) {
   return (
     <footer
       className={cn(
-        "border-t border-zinc-200/60 bg-white/80 dark:border-zinc-800/60 dark:bg-zinc-900/80",
+        "border-t border-border/70 bg-card/50 backdrop-blur-sm",
         className,
       )}
     >
-      <div className="mx-auto max-w-6xl px-4 py-12">
-        <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
-          <div className="space-y-2">
-            <p className="font-display text-lg font-semibold text-zinc-900 dark:text-zinc-50">
-              {name}
-            </p>
-            <p className="max-w-sm text-sm text-zinc-500 dark:text-zinc-400">
-              {siteConfig.title} · {siteConfig.tagline}
+      <div className="mx-auto max-w-6xl px-4 py-14">
+        <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
+          <div className="space-y-3">
+            <div className="flex items-center gap-2.5">
+              <span className="flex size-8 items-center justify-center rounded-lg bg-gradient-to-br from-teal-700 to-teal-500 font-display text-[11px] font-bold text-white dark:from-teal-400 dark:to-teal-600 dark:text-teal-950">
+                VS
+              </span>
+              <p className="font-display text-lg font-semibold tracking-tight text-foreground">
+                {name}
+              </p>
+            </div>
+            <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
+              {siteConfig.title}. Building reliable Android & React Native
+              products with clean architecture and measurable impact.
             </p>
           </div>
 
-          <nav aria-label="Footer navigation" className="flex flex-wrap gap-x-6 gap-y-2">
+          <nav
+            aria-label="Footer navigation"
+            className="grid grid-cols-2 gap-x-8 gap-y-2 sm:grid-cols-3"
+          >
             {siteConfig.nav.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-sm text-zinc-600 transition-colors hover:text-teal-600 dark:text-zinc-400 dark:hover:text-teal-400"
+                className="text-sm text-muted-foreground transition-colors hover:text-accent"
               >
                 {item.label}
               </Link>
             ))}
           </nav>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2.5">
             {socialLinks.map(({ label, href, icon: Icon }) => (
               <a
                 key={label}
                 href={href}
                 target={href.startsWith("mailto:") ? undefined : "_blank"}
-                rel={href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
+                rel={
+                  href.startsWith("mailto:") ? undefined : "noopener noreferrer"
+                }
                 aria-label={label}
-                className="inline-flex size-9 items-center justify-center rounded-lg border border-zinc-200/60 text-zinc-600 transition-colors hover:border-teal-200 hover:bg-teal-50 hover:text-teal-600 dark:border-zinc-800/60 dark:text-zinc-400 dark:hover:border-teal-800 dark:hover:bg-teal-950/50 dark:hover:text-teal-400"
+                className="inline-flex size-10 items-center justify-center rounded-xl border border-border/70 text-muted-foreground transition-all hover:border-accent/40 hover:bg-accent/5 hover:text-accent"
               >
                 <Icon className="size-4" />
               </a>
@@ -78,11 +89,14 @@ export function Footer({ className }: FooterProps) {
           </div>
         </div>
 
-        <Separator className="my-8" />
+        <Separator className="my-8 opacity-70" />
 
-        <p className="text-center text-sm text-zinc-500 dark:text-zinc-400">
-          © {year} {name}. All rights reserved.
-        </p>
+        <div className="flex flex-col items-center justify-between gap-2 text-sm text-muted-foreground sm:flex-row">
+          <p>
+            © {year} {name}
+          </p>
+          <p className="text-xs">Crafted with Next.js · Deployed on GitHub Pages</p>
+        </div>
       </div>
     </footer>
   );

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { DM_Sans, Syne } from "next/font/google";
+import { Outfit, Syne } from "next/font/google";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { ThemeProvider } from "@/components/layout/theme-provider";
@@ -8,9 +8,9 @@ import { siteConfig } from "@/lib/site";
 import { withBasePath } from "@/lib/utils";
 import "./globals.css";
 
-const dmSans = DM_Sans({
+const outfit = Outfit({
   subsets: ["latin"],
-  variable: "--font-dm-sans",
+  variable: "--font-outfit",
   display: "swap",
 });
 
@@ -124,7 +124,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${dmSans.variable} ${syne.variable} min-h-screen bg-background font-sans text-foreground antialiased`}
+        className={`${outfit.variable} ${syne.variable} min-h-screen bg-background font-sans text-foreground antialiased`}
       >
         <script
           type="application/ld+json"
